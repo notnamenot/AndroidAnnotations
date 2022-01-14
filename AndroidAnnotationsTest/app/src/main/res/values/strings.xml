@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidAnnotationsTest</string>
+    <string name="goToBasicActivity">Go to basic activity</string>
+    <string name="goToAnnotatedActivity">Go to annotated activity</string>
+    <string name="basicActivity">Basic Activity</string>
+    <string name="annotatedActivity">Annotated activity</string>
+    <string name="prefName">Jan</string>
+    <string name="prefAge">20</string>
+    <string name="task">Task</string>
+    <string name="task_descr">Stwórz przy pomocy Android Annotations funkcje, która po przytrzymaniu przycisku \'TASK\' wyświetli Toast \'Android rules!\'</string>
+</resources>
