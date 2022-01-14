@@ -23,8 +23,8 @@ import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
-import org.androidannotations.annotations.HttpsClient;
 import org.androidannotations.annotations.ItemSelect;
+import org.androidannotations.annotations.HttpsClient;
 import org.androidannotations.annotations.LongClick;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
@@ -145,7 +145,7 @@ public class ActivityAnnotated extends AppCompatActivity  {
 
     @AfterInject
     @Background
-    public void securedRequest() {
+    public void backgroundRequest() {
         try {
             HttpGet httpget = new   HttpGet("https://gorest.co.in/public/v1/posts/1358");
             HttpResponse response = httpsClient.execute(httpget);

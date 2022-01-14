@@ -3,6 +3,7 @@ package pl.edu.agh.zpsm.annotationTest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -59,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setAdapter(adapter);
         //  Specify the interface implementation
         spinner.setOnItemSelectedListener(this);
+
+
+        // #6 BACKGROUND TASK & UITHREAD
+        new BackgroundRequest(this).execute();
     }
 
     public void GoToAnnotatedActivity(View v) {
@@ -109,4 +114,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
+
+
 }
+
