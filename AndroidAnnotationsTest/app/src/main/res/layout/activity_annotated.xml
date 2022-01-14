@@ -61,9 +61,10 @@
 
     <TextView
         android:id="@+id/taskDesc"
-        android:layout_width="202dp"
-        android:layout_height="86dp"
+        android:layout_width="258dp"
+        android:layout_height="144dp"
         android:text="@string/task_descr"
+        android:textSize="18sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

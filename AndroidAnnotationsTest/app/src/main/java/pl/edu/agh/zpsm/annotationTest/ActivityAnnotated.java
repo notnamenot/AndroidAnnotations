@@ -42,7 +42,6 @@ public class ActivityAnnotated extends AppCompatActivity  {
     @RestService
     RestClient restClient;
 
-
     @Extra String someExtra;
 
 //    @ViewById Button btnGoToBasicActivity;  // @ViewById(R.id.btnGoToBasicActivity)
@@ -56,6 +55,7 @@ public class ActivityAnnotated extends AppCompatActivity  {
 
     @AfterViews
     void init(){
+        // #1 RESOURCE
         getSupportActionBar().setTitle(annotatedActivity);
 
 
@@ -67,19 +67,17 @@ public class ActivityAnnotated extends AppCompatActivity  {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinnerMonths.setAdapter(adapter);
-        //  Specify the interface implementation
         //  spinnerMonths.setOnItemSelectedListener(this); // brak setOnItemSelectedListener
-
     }
 
+    // #2 BUTTON CLICK
     @Click      // ({R.id.btnGoToBasicActivity})
     public void btnGoToBasicActivityClicked() {
+        // #3 INTENT
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("SOME_EXTRA", "Sent from annotated activity");
         startActivity(intent);
     }
-
-
 
     @AfterExtras
     public void onAfterExtrasInjection() {
@@ -93,7 +91,6 @@ public class ActivityAnnotated extends AppCompatActivity  {
     // #4 SHARED PREFERENCES - simple dictionary like data storage
     @Pref
     MyPrefs_ myPrefs;
-
 
     // Fetch the stored data in onResume() Because this is what will be called when the app opens again
     @Override
@@ -113,6 +110,7 @@ public class ActivityAnnotated extends AppCompatActivity  {
     }
 
 
+    // #5 SPINNER ITEM SELECTED
     @ItemSelect(R.id.spinnerMonths)
     public void spinnerMonthsItemSelected(boolean selected, String selectedItem) {
         Toast toast = Toast.makeText(this, selectedItem, Toast.LENGTH_SHORT);
@@ -142,13 +140,14 @@ public class ActivityAnnotated extends AppCompatActivity  {
 //        }
 //    }
 
+    // #6 BACKGROUND TASK & UITHREAD
     @HttpsClient HttpClient httpsClient;
 
     @AfterInject
     @Background
     public void securedRequest() {
         try {
-            HttpGet httpget = new   HttpGet("https://gorest.co.in/public/v1/posts/1507");
+            HttpGet httpget = new   HttpGet("https://gorest.co.in/public/v1/posts/1358");
             HttpResponse response = httpsClient.execute(httpget);
             doSomethingWithResponse(response);
         } catch (Exception e) {

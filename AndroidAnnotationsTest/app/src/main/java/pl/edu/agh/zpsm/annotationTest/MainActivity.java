@@ -59,17 +59,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setAdapter(adapter);
         //  Specify the interface implementation
         spinner.setOnItemSelectedListener(this);
-
-
-
     }
-
 
     public void GoToAnnotatedActivity(View v) {
         // #3 INTENT
         ActivityAnnotated_.intent(this).someExtra("Sent from basic activity").start();        // Underscore at the end of class name !!!
     }
 
+    // #4 SHARED PREFERENCES
     // Fetch the stored data in onResume() Because this is what will be called when the app opens again
     @Override
     protected void onResume() {
@@ -100,9 +97,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         myEdit.apply();
     }
 
-
-
-
+    // #5 SPINNER ITEM SELECTED
     // Required by OnItemSelectedListener
     public void onItemSelected(AdapterView<?> parent, View view,  int pos, long id) {
         String selectedItem = parent.getItemAtPosition(pos).toString();
