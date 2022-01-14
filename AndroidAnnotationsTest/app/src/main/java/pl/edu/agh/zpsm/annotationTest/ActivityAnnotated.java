@@ -39,8 +39,8 @@ import org.springframework.web.client.RestClientException;
 @EActivity(R.layout.activity_annotated) // Sets content view to R.layout.activity_annotated
 public class ActivityAnnotated extends AppCompatActivity  {
 
-    @RestService
-    RestClient restClient;
+//    @RestService
+//    RestClient restClient;
 
     @Extra String someExtra;
 
@@ -118,28 +118,6 @@ public class ActivityAnnotated extends AppCompatActivity  {
     }
 
 
-    @Click
-    public void btnTaskClicked() {
-        taskDesc.setVisibility(View.VISIBLE);
-    }
-
-
-
-
-//    @Click
-//    public void btnRestClicked() {
-//        searchAsync();
-//    }
-//
-//    @Background
-//    void searchAsync(){
-//        try {
-//            String response = restClient.getResult("1507");
-//        } catch (RestClientException e) {
-//            System.out.println("errorREST "+e);
-//        }
-//    }
-
     // #6 BACKGROUND TASK & UITHREAD
     @HttpsClient HttpClient httpsClient;
 
@@ -147,7 +125,7 @@ public class ActivityAnnotated extends AppCompatActivity  {
     @Background
     public void backgroundRequest() {
         try {
-            HttpGet httpget = new   HttpGet("https://gorest.co.in/public/v1/posts/1358");
+            HttpGet httpget = new HttpGet("https://gorest.co.in/public/v1/posts/1358");
             HttpResponse response = httpsClient.execute(httpget);
             doSomethingWithResponse(response);
         } catch (Exception e) {
@@ -163,4 +141,11 @@ public class ActivityAnnotated extends AppCompatActivity  {
             System.out.println(e);
         }
     }
+
+    // ZADANIE
+    @Click
+    public void btnTaskClicked() {
+        taskDesc.setVisibility(View.VISIBLE);
+    }
+
 }

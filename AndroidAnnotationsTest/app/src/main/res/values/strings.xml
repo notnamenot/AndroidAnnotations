@@ -7,5 +7,5 @@
     <string name="prefName">Jan</string>
     <string name="prefAge">20</string>
     <string name="task">Task</string>
-    <string name="task_descr">Stwórz przy pomocy Android Annotations funkcje, która po przytrzymaniu przycisku \'TASK\' wyświetli Toast \'Android rules!\'</string>
+    <string name="task_descr">Stwórz przy pomocy Android Annotations funkcje, która po przytrzymaniu przycisku \'TASK\' wyświetli Toast \'Annotations rules!\'</string>
 </resources>

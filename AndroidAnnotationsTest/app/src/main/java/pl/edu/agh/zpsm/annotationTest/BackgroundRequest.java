@@ -16,7 +16,6 @@ import java.io.IOException;
 public class BackgroundRequest extends AsyncTask<String, Integer, Long> {
 
     Context context;
-    //use this for mail. Create other contructors for other tasks
     public BackgroundRequest(Context context){
         this.context = context;
     }
@@ -27,7 +26,6 @@ public class BackgroundRequest extends AsyncTask<String, Integer, Long> {
         HttpClient httpclient = new DefaultHttpClient();
         try {
             HttpResponse response = httpclient.execute(new HttpGet("https://gorest.co.in/public/v1/posts/1358"));
-            doSomethingWithResponse(response);
             publishProgress(response.getStatusLine().getStatusCode());
             return 1L;
         } catch (IOException e) {
@@ -41,7 +39,4 @@ public class BackgroundRequest extends AsyncTask<String, Integer, Long> {
         Toast.makeText(context, "HTTP status " + Integer.toString(values[0]), Toast.LENGTH_SHORT).show();
     }
 
-    public void doSomethingWithResponse(HttpResponse resp) {
-
-    }
 }
